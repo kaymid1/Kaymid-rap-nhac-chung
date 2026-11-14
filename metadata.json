@@ -1,0 +1,8 @@
+{
+  "name": "Rạp Nhạc Chung",
+  "description": "Phòng nghe nhạc YouTube chung theo thời gian thực với rạp chiếu phim, hàng ghế khán giả và trò chuyện trực tiếp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

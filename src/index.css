@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    background-color: #0B0608;
+    color: #F5EFE6;
+  }
+}
+
+/* Custom subtle scrollbars for theater panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 10, 14, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.45);
+}
+
+/* Velvet curtain vertical pleats texture */
+.curtain-pleats-left {
+  background: repeating-linear-gradient(
+    90deg,
+    #450A0A 0px,
+    #7F1D1D 14px,
+    #991B1B 24px,
+    #5C0E0E 36px,
+    #350606 46px
+  );
+  box-shadow: inset -18px 0 32px rgba(0, 0, 0, 0.75), 12px 0 30px rgba(0, 0, 0, 0.65);
+}
+
+.curtain-pleats-right {
+  background: repeating-linear-gradient(
+    270deg,
+    #450A0A 0px,
+    #7F1D1D 14px,
+    #991B1B 24px,
+    #5C0E0E 36px,
+    #350606 46px
+  );
+  box-shadow: inset 18px 0 32px rgba(0, 0, 0, 0.75), -12px 0 30px rgba(0, 0, 0, 0.65);
+}
+
+.curtain-valance {
+  background: repeating-linear-gradient(
+    90deg,
+    #4C0B0B 0px,
+    #881B1B 18px,
+    #9F1F1F 30px,
+    #5E0F0F 44px,
+    #3A0707 56px
+  );
+}
+
+/* Seated character emote animations (compositor-only transform/opacity) */
+@keyframes character-dance {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg) scale(1.02);
+  }
+  25% {
+    transform: translateY(-7px) rotate(5deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-1px) rotate(7deg) scale(1.02);
+  }
+  75% {
+    transform: translateY(-7px) rotate(-5deg) scale(1.05);
+  }
+}
+
+@keyframes character-boo-shake {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-3px) rotate(-5deg);
+  }
+  40% {
+    transform: translateX(3px) rotate(5deg);
+  }
+  60% {
+    transform: translateX(-3px) rotate(-4deg);
+  }
+  80% {
+    transform: translateX(2px) rotate(4deg);
+  }
+}
+
+@keyframes character-whistle-sway {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(3deg);
+  }
+}
+
+@keyframes clap-arm-left {
+  0%, 100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(22deg) translate(4px, -3px);
+  }
+}
+
+@keyframes clap-arm-right {
+  0%, 100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(-22deg) translate(-4px, -3px);
+  }
+}
+
+@keyframes ambient-breathe {
+  0%, 100% {
+    opacity: 0.86;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes edm-speaker-thump {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.07);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes edm-laser-left {
+  0%, 100% {
+    transform: rotate(-18deg) scaleY(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: rotate(14deg) scaleY(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes edm-laser-right {
+  0%, 100% {
+    transform: rotate(18deg) scaleY(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: rotate(-14deg) scaleY(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes edm-eq-bar {
+  0%, 100% {
+    transform: scaleY(0.28);
+  }
+  35% {
+    transform: scaleY(0.95);
+  }
+  70% {
+    transform: scaleY(0.5);
+  }
+}
+
+@keyframes edm-rave-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+@keyframes dance-sway-left {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(-4deg);
+  }
+  50% {
+    transform: translate(3px, -4px) rotate(5deg);
+  }
+}
+
+@keyframes dance-sway-right {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(4deg);
+  }
+  50% {
+    transform: translate(-3px, -4px) rotate(-5deg);
+  }
+}
+
+@keyframes dance-solo-groove {
+  0%, 100% {
+    transform: translateY(0px) rotate(-5deg) scale(1);
+  }
+  25% {
+    transform: translateY(-5px) rotate(4deg) scale(1.03);
+  }
+  50% {
+    transform: translateY(-1px) rotate(6deg) scale(1);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-4deg) scale(1.03);
+  }
+}
+
+.animate-character-dance {
+  animation: character-dance 0.55s ease-in-out infinite;
+}
+
+.animate-character-boo {
+  animation: character-boo-shake 0.36s ease-in-out infinite;
+}
+
+.animate-character-whistle {
+  animation: character-whistle-sway 0.9s ease-in-out infinite;
+}
+
+.animate-clap-left {
+  transform-origin: 11px 26px;
+  animation: clap-arm-left 0.28s ease-in-out infinite;
+}
+
+.animate-clap-right {
+  transform-origin: 37px 26px;
+  animation: clap-arm-right 0.28s ease-in-out infinite;
+}
+
+.animate-ambient-breathe {
+  animation: ambient-breathe 4.5s ease-in-out infinite;
+}
+
+.animate-vinyl-spin {
+  animation: vinyl-spin 4.2s linear infinite;
+}
+
+.animate-edm-thump {
+  animation: edm-speaker-thump 0.48s ease-in-out infinite;
+}
+
+.animate-edm-laser-left {
+  transform-origin: top center;
+  animation: edm-laser-left 3.8s ease-in-out infinite;
+}
+
+.animate-edm-laser-right {
+  transform-origin: top center;
+  animation: edm-laser-right 4.1s ease-in-out infinite;
+}
+
+.animate-edm-eq {
+  transform-origin: bottom center;
+  animation: edm-eq-bar 0.55s ease-in-out infinite;
+}
+
+.animate-edm-rave {
+  animation: edm-rave-bounce 0.46s ease-in-out infinite;
+}
+
+.animate-dance-sway-left {
+  animation: dance-sway-left 1.35s ease-in-out infinite;
+}
+
+.animate-dance-sway-right {
+  animation: dance-sway-right 1.35s ease-in-out infinite;
+}
+
+.animate-dance-solo {
+  animation: dance-solo-groove 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-character-dance,
+  .animate-character-boo,
+  .animate-character-whistle,
+  .animate-clap-left,
+  .animate-clap-right,
+  .animate-ambient-breathe,
+  .animate-vinyl-spin,
+  .animate-edm-thump,
+  .animate-edm-laser-left,
+  .animate-edm-laser-right,
+  .animate-edm-eq,
+  .animate-edm-rave,
+  .animate-dance-sway-left,
+  .animate-dance-sway-right,
+  .animate-dance-solo {
+    animation: none;
+  }
+}
